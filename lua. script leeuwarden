@@ -1,0 +1,182 @@
+-- Load the IUP library
+local iup = require("iuplua")
+
+-- Create a label and a button
+local label = iup.label {title = "Hello, User!"}
+local button = iup.button {title = "Click Me"}
+
+-- Define what happens when the button is clicked
+function button:action()
+    label.title = "Button Clicked!"
+end
+
+-- Create a dialog with the label and button
+local dialog = iup.dialog {
+    iup.vbox {
+        label,
+        button,
+    },
+    title = "Simple UI",
+    size = "40x40",
+
+-- Show the dialog
+dialog:show()
+
+-- Start the UI loop
+iup.MainLoop()
+-- Load the IUP library
+local iup = require("iuplua")
+
+-- Create UI elements
+local label = iup.label {title = "Set your speed and jump height below!"}
+local speedInput = iup.text {value = "16", visiblecolumns = 5}
+local heightInput = iup.text {value = "16", visiblecolumns = 5}
+local buttonSetSpeed = iup.button {title = "Set Speed"}
+local buttonSetHeight = iup.button {title = "Set Jump Height"}
+local buttonFly = iup.button {title = "Fly"}
+local buttonJump = iup.button {title = "Jump"}
+local buttonClose = iup.button {title = "Close"}
+
+-- Define the action for the Set Speed button
+function buttonSetSpeed:action()
+    local speed = tonumber(speedInput.value)
+    if speed and speed >= 16 and speed <= 500 then
+        label.title = "Speed set to: " .. speed
+    else
+        label.title = "Invalid speed! Please enter a value between 16 and 500."
+    end
+end
+
+-- Define the action for the Set Jump Height button
+function buttonSetHeight:action()
+    local height = tonumber(heightInput.value)
+    if height and height >= 16 and height <= 500 then
+        label.title = "Jump Height set to: " .. height
+    else
+        label.title = "Invalid jump height! Please enter a value between 16 and 500."
+    end
+end
+
+-- Define the action for the Fly button
+function buttonFly:action()
+    label.title = "Flying at the set speed! 🚀"
+end
+
+-- Define the action for the Jump button
+function buttonJump:action()
+    label.title = "Jumping to the set height! 🦘"
+end
+
+-- Define the action for the Close button
+function buttonClose:action()
+    return iup.CLOSE -- Closes the dialog
+end
+
+-- Create a dialog with the elements
+local dialog = iup.dialog {
+    iup.vbox {
+        label,
+        iup.hbox {iup.label {title = "Speed:"}, speedInput, buttonSetSpeed},
+        iup.hbox {iup.label {title = "Jump Height:"}, heightInput, buttonSetHeight},
+        buttonFly,
+        buttonJump,
+        buttonClose,
+    },
+    title = "Fly and Jump UI",
+    size = "28x28",
+}
+
+-- Show the dialog
+dialog:show()
+
+-- Start the UI loop
+iup.MainLoop()
+-- Load the IUP library
+local iup = require("iuplua")
+
+-- Create UI elements
+local title = iup.label {title = "Main", font = "Helvetica, Bold 16", alignment = "ALEFT"}
+local label = iup.label {title = "Set your speed and jump height below!"}
+local speedInput = iup.text {value = "16", visiblecolumns = 5}
+local heightInput = iup.text {value = "16", visiblecolumns = 5}
+local buttonSetSpeed = iup.button {title = "Set Speed"}
+local buttonSetHeight = iup.button {title = "Set Jump Height"}
+local buttonFly = iup.button {title = "Fly"}
+local buttonJump = iup.button {title = "Jump"}
+local buttonClose = iup.button {title = "Close"}
+
+-- Define the action for the Set Speed button
+function buttonSetSpeed:action()
+    local speed = tonumber(speedInput.value)
+    if speed and speed >= 16 and speed <= 500 then
+        label.title = "Speed set to: " .. speed
+    else
+        label.title = "Invalid speed! Please enter a value between 16 and 500."
+    end
+end
+
+-- Define the action for the Set Jump Height button
+function buttonSetHeight:action()
+    local height = tonumber(heightInput.value)
+    if height and height >= 16 and height <= 500 then
+        label.title = "Jump Height set to: " .. height
+    else
+        label.title = "Invalid jump height! Please enter a value between 16 and 500."
+    end
+end
+
+-- Define the action for the Fly button
+function buttonFly:action()
+    label.title = "Flying at the set speed! 🚀"
+end
+
+-- Define the action for the Jump button
+function buttonJump:action()
+    label.title = "Jumping to the set height! 🦘"
+end
+
+-- Define the action for the Close button
+function buttonClose:action()
+    return iup.CLOSE -- Closes the dialog
+end
+
+-- Create a dialog with the elements
+local dialog = iup.dialog {
+    iup.vbox {
+        title, -- Add the "Main" title here
+        label,
+        iup.hbox {iup.label {title = "Speed:"}, speedInput, buttonSetSpeed},
+        iup.hbox {iup.label {title = "Jump Height:"}, heightInput, buttonSetHeight},
+        buttonFly,
+        buttonJump,
+        buttonClose,
+    },
+    title = "Fly and Jump UI",
+    size = "18x18",
+}
+
+-- Show the dialog
+dialog:show()
+
+-- Start the UI loop
+iup.MainLoop()
+-- Load the IUP library
+local iup = require("iuplua")
+
+-- Create UI elements for the Main section
+local titleMain = iup.label {title = "Main", font = "Helvetica, Bold 16", alignment = "ALEFT"}
+local labelMain = iup.label {title = "Set your speed and jump height below!"}
+local speedInput = iup.text {value = "16", visiblecolumns = 5}
+local heightInput = iup.text {value = "16", visiblecolumns = 5}
+local buttonSetSpeed = iup.button {title = "Set Speed"}
+local buttonSetHeight = iup.button {title = "Set Jump Height"}
+local buttonFly = iup.button {title = "Fly"}
+local buttonJump = iup.button {title = "Jump"}
+
+-- Create UI elements for the Credits section
+local titleCredits = iup.label {title = "Credits", font = "Helvetica, Bold 16", alignment = "ALEFT"}
+local labelCredits = iup.label {title = "Created by: 3_dagen"}
+
+-- Create a Close button
+local buttonClose = iup.button {title = "Close"}
+end
